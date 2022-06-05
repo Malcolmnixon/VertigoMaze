@@ -8,7 +8,7 @@
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/equipment/GrappleTarget.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/readloud.net/LearnGrappling.mp3" type="AudioStream" id=8]
-[ext_resource path="res://game/maps/LearnGrapplingMap.gd" type="Script" id=9]
+[ext_resource path="res://game/maps/learn/LearnGrapplingMap.gd" type="Script" id=9]
 
 [node name="LearnGrapplingMap" type="Spatial"]
 script = ExtResource( 9 )
