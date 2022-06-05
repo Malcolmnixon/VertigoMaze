@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/TrainingComplete.mp3-97699ca94632b304782b978a483ed7a5.mp3str"
+
+[deps]
+
+source_file="res://assets/readloud.net/TrainingComplete.mp3"
+dest_files=[ "res://.import/TrainingComplete.mp3-97699ca94632b304782b978a483ed7a5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

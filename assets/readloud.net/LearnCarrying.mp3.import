@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LearnCarrying.mp3-a52f26715b36eacd4f32b85fe0e16af4.mp3str"
+
+[deps]
+
+source_file="res://assets/readloud.net/LearnCarrying.mp3"
+dest_files=[ "res://.import/LearnCarrying.mp3-a52f26715b36eacd4f32b85fe0e16af4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

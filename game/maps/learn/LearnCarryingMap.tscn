@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://game/terrain/Column5.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/terrain/Ramp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/terrain/Block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/rooms/SmallRoom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/equipment/GrappleTarget.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/maps/learn/LearnCarryingMap.gd" type="Script" id=8]
+[ext_resource path="res://assets/readloud.net/LearnCarrying.mp3" type="AudioStream" id=9]
+[ext_resource path="res://game/equipment/RedKey.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/equipment/RedPanel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/readloud.net/TrainingComplete.mp3" type="AudioStream" id=12]
+
+[node name="LearnCarryingMap" type="Spatial"]
+script = ExtResource( 8 )
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="SmallRoom" parent="Environment" instance=ExtResource( 4 )]
+
+[node name="GrappleTarget" parent="Environment" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -8 )
+
+[node name="Column5" parent="Environment" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2.5, -9 )
+
+[node name="Block1" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2.5, 7.5 )
+
+[node name="Block2" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.5, 7.5 )
+
+[node name="Block3" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2.5, 7.5 )
+
+[node name="Block4" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, 7.5 )
+
+[node name="Block5" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, 2.5 )
+
+[node name="Block7" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.5, -7.5 )
+
+[node name="Ramp" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.5, 0, 1 )
+
+[node name="RedKey" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5.1, 8 )
+
+[node name="RedPanel" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, -10 )
+
+[node name="Target" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 5, -9 )
+enabled = false
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 8 )
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="LearnCarrying" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 9 )
+
+[node name="TrainingComplete" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 12 )
+
+[connection signal="key_inserted" from="RedPanel" to="." method="_on_RedPanel_key_inserted"]
+[connection signal="key_removed" from="RedPanel" to="." method="_on_RedPanel_key_removed"]
+[connection signal="target_triggered" from="Target" to="." method="_on_Target_target_triggered"]
+[connection signal="fade_complete" from="Player" to="." method="_on_Player_fade_complete"]
+[connection signal="finished" from="Sounds/LearnCarrying" to="." method="_on_LearnCarrying_finished"]
+[connection signal="finished" from="Sounds/TrainingComplete" to="." method="_on_TrainingComplete_finished"]
