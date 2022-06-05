@@ -1,4 +1,4 @@
-class_name LearnGlidingMap
+class_name LearnJumpPadMap
 extends MapBase
 
 
@@ -10,12 +10,12 @@ func _on_Target_target_triggered(_target):
 func _on_Player_fade_complete(id):
 	match id:
 		"start":
-			$Sounds/LearnGliding.play()
+			$Sounds/LearnJumpPad.play()
 
 		"finish":
 			emit_signal("map_complete")
 
 
-func _on_LearnGliding_finished():
+func _on_LearnJumpPad_finished():
 	$Player.enable_movement(true)
 	$Target.enabled = true

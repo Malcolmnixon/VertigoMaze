@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/VertigoMazeGame.gd" type="Script" id=1]
 [ext_resource path="res://game/MapLevel.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://game/maps/LearnGrapplingMap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/maps/WelcomeMap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/freepd.com/Experimental Test Subject.mp3" type="AudioStream" id=7]
+[ext_resource path="res://game/maps/LearnJumpPadMap.tscn" type="PackedScene" id=8]
 
 [node name="VertigoMazeGame" type="Spatial"]
 script = ExtResource( 1 )
@@ -24,6 +25,9 @@ map_scene = ExtResource( 4 )
 
 [node name="LearnGrappling" parent="Levels" instance=ExtResource( 2 )]
 map_scene = ExtResource( 5 )
+
+[node name="LearnJumpPad" parent="Levels" instance=ExtResource( 2 )]
+map_scene = ExtResource( 8 )
 
 [node name="Sounds" type="Node" parent="."]
 

@@ -2,7 +2,7 @@ class_name LearnGrapplingMap
 extends MapBase
 
 
-func _on_Target_target_triggered(target):
+func _on_Target_target_triggered(_target):
 	$Player.enable_movement(false)
 	$Player.fade_out("finish", 3)
 

@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game/maps/LearnGrapplingMap.gd"
 }, {
+"base": "MapBase",
+"class": "LearnJumpPadMap",
+"language": "GDScript",
+"path": "res://game/maps/LearnJumpPadMap.gd"
+}, {
 "base": "Spatial",
 "class": "MapBase",
 "language": "GDScript",
@@ -201,6 +206,7 @@ _global_script_class_icons={
 "LearnClimbingMap": "",
 "LearnGlidingMap": "",
 "LearnGrapplingMap": "",
+"LearnJumpPadMap": "",
 "MapBase": "",
 "MapLevel": "",
 "MovementProvider": "",

@@ -24,7 +24,7 @@ func _enabled_set(new_value: bool):
 # Update enabled
 func _update_enabled():
 	$Particles.emitting = enabled
-	$Area.monitoring = enabled
+	$Area.set_deferred("monitoring", enabled)
 
 
 # Handle player entering target
