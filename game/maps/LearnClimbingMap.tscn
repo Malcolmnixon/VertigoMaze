@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://game/terrain/Column5.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/rooms/SmallRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/terrain/FloorRise.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/equipment/ClimbingPad.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/maps/LearnClimbingMap.gd" type="Script" id=7]
+[ext_resource path="res://assets/readloud.net/LearnClimbing.mp3" type="AudioStream" id=8]
+
+[node name="LearnClimbingMap" type="Spatial"]
+script = ExtResource( 7 )
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="SmallRoom" parent="Environment" instance=ExtResource( 2 )]
+
+[node name="FloorRise" parent="Environment" instance=ExtResource( 3 )]
+
+[node name="Column5_1" parent="Environment" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, 0 )
+
+[node name="Column5_2" parent="Environment" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, 0 )
+
+[node name="ClimbingPad" parent="Environment" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, 3 )
+
+[node name="ClimbingPad2" parent="Environment" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 5, 3 )
+
+[node name="ClimbingPad4" parent="Environment" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, -3 )
+
+[node name="ClimbingPad5" parent="Environment" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 5, -3 )
+
+[node name="ClimbingPad3" parent="Environment" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, -10, 9.5, 2.5 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.5, 5, 0 )
+
+[node name="Target" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 5, 0 )
+enabled = false
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="LearnClimbing" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[connection signal="fade_complete" from="Player" to="." method="_on_Player_fade_complete"]
+[connection signal="target_triggered" from="Target" to="." method="_on_Target_target_triggered"]
+[connection signal="finished" from="Sounds/LearnClimbing" to="." method="_on_LearnClimbing_finished"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LearnClimbing.mp3-d14ffaebed478e2eea40737ecbaca2a3.mp3str"
+
+[deps]
+
+source_file="res://assets/readloud.net/LearnClimbing.mp3"
+dest_files=[ "res://.import/LearnClimbing.mp3-d14ffaebed478e2eea40737ecbaca2a3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

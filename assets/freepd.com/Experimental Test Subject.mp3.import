@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Experimental Test Subject.mp3-4f32b5d97be1beaa845d1af1bf70f4d7.mp3str"
+
+[deps]
+
+source_file="res://assets/freepd.com/Experimental Test Subject.mp3"
+dest_files=[ "res://.import/Experimental Test Subject.mp3-4f32b5d97be1beaa845d1af1bf70f4d7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

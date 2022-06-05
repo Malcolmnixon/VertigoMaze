@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LearnGrappling.mp3-cd0c5fb444a3665e0f992bca2f3c5e57.mp3str"
+
+[deps]
+
+source_file="res://assets/readloud.net/LearnGrappling.mp3"
+dest_files=[ "res://.import/LearnGrappling.mp3-cd0c5fb444a3665e0f992bca2f3c5e57.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
