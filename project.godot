@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/misc/ARVR_Helpers.gd"
 }, {
+"base": "MapBase",
+"class": "FinishedMap",
+"language": "GDScript",
+"path": "res://game/maps/finished/FinishedMap.gd"
+}, {
 "base": "MovementProvider",
 "class": "Function_ClimbMovement",
 "language": "GDScript",
@@ -206,6 +211,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "ARVRHelpers": "",
+"FinishedMap": "",
 "Function_ClimbMovement": "",
 "Function_DirectMovement": "",
 "Function_FlightMovement": "",
@@ -249,6 +255,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VertigoMaze"
+config/description="Vertigo Maze 0.0.1"
 run/main_scene="res://game/VertigoMazeGame.tscn"
 config/icon="res://icon.png"
 

@@ -51,6 +51,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.05, 0.15 )
 
 [node name="Function_Pickup" parent="FPController/LeftHandController" index="1" instance=ExtResource( 7 )]
 ranged_distance = 2.0
+ranged_angle = 15.0
 
 [node name="Function_Direct_movement" parent="FPController/LeftHandController" index="2" instance=ExtResource( 11 )]
 enabled = false
@@ -69,6 +70,7 @@ enabled = false
 
 [node name="Function_Pickup" parent="FPController/RightHandController" index="2" instance=ExtResource( 7 )]
 ranged_distance = 2.0
+ranged_angle = 15.0
 
 [node name="Function_Turn_movement" parent="FPController/RightHandController" index="3" instance=ExtResource( 6 )]
 smooth_rotation = true
