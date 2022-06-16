@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/maps/finished/FinishedMap.gd" type="Script" id=1]
 [ext_resource path="res://game/ui/CreditsScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/readloud.net/Finished.mp3" type="AudioStream" id=3]
-[ext_resource path="res://game/terrain/FloorRise.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/objects/FloorRise.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-xr-tools/objects/Viewport_2D_in_3D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/rooms/SmallRoom.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/maps/finished/FinishedMap.lmbake" type="BakedLightmapData" id=8]
 
 [node name="FinishedMap" type="Spatial"]
 script = ExtResource( 1 )
@@ -19,7 +20,15 @@ script = ExtResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="Environment"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0 )
-omni_range = 22.0
+light_size = 1.0
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 17.0
+
+[node name="BakedLightmap" type="BakedLightmap" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+extents = Vector3( 11, 11, 11 )
+light_data = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )

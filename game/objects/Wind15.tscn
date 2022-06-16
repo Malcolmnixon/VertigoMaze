@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/godot-xr-tools/objects/Wind_area.gd" type="Script" id=1]
+[ext_resource path="res://addons/kenney_particle_pack/dirt_02.png" type="Texture" id=2]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 2.0
+height = 15.0
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 5
+emission_ring_radius = 2.0
+emission_ring_inner_radius = 2.0
+emission_ring_height = 0.0
+emission_ring_axis = Vector3( 0, 1, 0 )
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.3
+angle = 360.0
+angle_random = 1.0
+
+[sub_resource type="QuadMesh" id=4]
+size = Vector2( 0.3, 0.3 )
+
+[node name="Wind15" type="Spatial"]
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 524288
+collision_mask = 0
+monitoring = false
+script = ExtResource( 1 )
+wind_vector = Vector3( 0, 15, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Particles" type="Particles" parent="."]
+material_override = SubResource( 2 )
+amount = 30
+lifetime = 1.6
+visibility_aabb = AABB( -2, -15, -2, 4, 30, 4 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 4 )

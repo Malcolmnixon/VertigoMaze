@@ -79,35 +79,35 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/overrides/GroundPhysicsSettings.gd"
 }, {
-"base": "MapBase",
+"base": "Reference",
 "class": "LearnCarryingMap",
 "language": "GDScript",
-"path": "res://game/maps/learn/LearnCarryingMap.gd"
+"path": "res://game/maps/learn/learn_carry/LearnCarryingMap.gd"
 }, {
 "base": "MapBase",
 "class": "LearnClimbingMap",
 "language": "GDScript",
-"path": "res://game/maps/learn/LearnClimbingMap.gd"
+"path": "res://game/maps/learn/learn_climbing/LearnClimbingMap.gd"
 }, {
 "base": "MapBase",
 "class": "LearnGlidingMap",
 "language": "GDScript",
-"path": "res://game/maps/learn/LearnGlidingMap.gd"
+"path": "res://game/maps/learn/learn_gliding/LearnGlidingMap.gd"
 }, {
 "base": "MapBase",
 "class": "LearnGrapplingMap",
 "language": "GDScript",
-"path": "res://game/maps/learn/LearnGrapplingMap.gd"
+"path": "res://game/maps/learn/learn_grappling/LearnGrapplingMap.gd"
 }, {
 "base": "MapBase",
 "class": "LearnJumpPadMap",
 "language": "GDScript",
-"path": "res://game/maps/learn/LearnJumpPadMap.gd"
+"path": "res://game/maps/learn/learn_jump/LearnJumpPadMap.gd"
 }, {
 "base": "MapBase",
 "class": "LearnWindMap",
 "language": "GDScript",
-"path": "res://game/maps/learn/LearnWindMap.gd"
+"path": "res://game/maps/learn/learn_wind/LearnWindMap.gd"
 }, {
 "base": "Spatial",
 "class": "MapBase",
@@ -255,7 +255,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VertigoMaze"
-config/description="Vertigo Maze 0.0.2"
+config/description="Vertigo Maze 0.0.3"
 run/main_scene="res://game/VertigoMazeGame.tscn"
 config/icon="res://icon.png"
 
