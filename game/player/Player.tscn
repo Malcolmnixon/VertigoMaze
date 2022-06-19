@@ -36,9 +36,8 @@ script = ExtResource( 16 )
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
 
-[node name="Configuration" parent="FPController" index="0"]
-color_space = 0
-refresh_rate = 0.0
+[node name="ARVRCamera" parent="FPController" index="1"]
+far = 1000.0
 
 [node name="MeshInstance" type="MeshInstance" parent="FPController/ARVRCamera" index="0"]
 mesh = SubResource( 1 )
@@ -55,11 +54,13 @@ ranged_angle = 15.0
 
 [node name="Function_Direct_movement" parent="FPController/LeftHandController" index="2" instance=ExtResource( 11 )]
 enabled = false
+order = 10
 max_speed = 3.0
 strafe = true
 
 [node name="Function_Jump_movement" parent="FPController/LeftHandController" index="3" instance=ExtResource( 8 )]
 enabled = false
+order = 20
 jump_button_id = 7
 
 [node name="RightHand" parent="FPController/RightHandController" index="0" instance=ExtResource( 14 )]
@@ -73,35 +74,69 @@ ranged_distance = 2.0
 ranged_angle = 15.0
 
 [node name="Function_Turn_movement" parent="FPController/RightHandController" index="3" instance=ExtResource( 6 )]
+enabled = true
+order = 5
 smooth_rotation = true
+smooth_turn_speed = 2.0
+step_turn_delay = 0.2
+step_turn_angle = 20.0
 
 [node name="Function_Direct_movement" parent="FPController/RightHandController" index="4" instance=ExtResource( 11 )]
 enabled = false
+order = 10
 max_speed = 3.0
+strafe = false
 
 [node name="Function_Jump_movement" parent="FPController/RightHandController" index="5" instance=ExtResource( 8 )]
 enabled = false
+order = 20
 jump_button_id = 7
 
 [node name="Function_Grapple_movement" parent="FPController/RightHandController" index="6" instance=ExtResource( 3 )]
 enabled = false
+order = 20
+grapple_length = 15.0
 grapple_collision_mask = 2
+impulse_speed = 10.0
+winch_speed = 2.0
+rope_width = 0.02
+friction = 0.1
+grapple_button_id = 15
 
 [node name="PlayerBody" parent="FPController" instance=ExtResource( 9 )]
 
 [node name="Function_Climb_movement" parent="FPController" instance=ExtResource( 4 )]
 enabled = false
+order = 15
+forward_push = 1.0
+fling_multiplier = 1.0
+velocity_averages = 5
 left_pickup = NodePath("../LeftHandController/Function_Pickup")
 right_pickup = NodePath("../RightHandController/Function_Pickup")
 
 [node name="Function_Glide_movement" parent="FPController" instance=ExtResource( 12 )]
 enabled = false
+order = 35
+glide_detect_distance = 1.0
+glide_min_fall_speed = -1.5
+glide_fall_speed = -2.0
+glide_forward_speed = 12.0
+horizontal_slew_rate = 1.0
+vertical_slew_rate = 2.0
 
 [node name="Function_JumpDetect_Movement" parent="FPController" instance=ExtResource( 5 )]
 enabled = false
+order = 20
+body_jump_enable = true
+body_jump_player_only = false
+body_jump_threshold = 2.5
+arms_jump_threshold = 5.0
 
 [node name="Function_Wind_movement" parent="FPController" instance=ExtResource( 13 )]
 enabled = false
+order = 25
+drag_multiplier = 1.0
+collision_mask = 524288
 
 [node name="Sounds" type="Node" parent="."]
 

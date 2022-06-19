@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/TestRoom1.exr-945bcfb896a37b44fa213255089b1ed6.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://game/maps/tests/test-room-1/TestRoom1.exr"
+dest_files=[ "res://.import/TestRoom1.exr-945bcfb896a37b44fa213255089b1ed6.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=3

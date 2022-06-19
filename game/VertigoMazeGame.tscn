@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://game/VertigoMazeGame.gd" type="Script" id=1]
 [ext_resource path="res://game/MapLevel.tscn" type="PackedScene" id=2]
@@ -10,8 +10,9 @@
 [ext_resource path="res://game/maps/learn/learn_jump/LearnJumpPadMap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/maps/learn/learn_wind/LearnWindMap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/maps/learn/learn_carry/LearnCarryingMap.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/maps/tests/TestMedium.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/maps/tests/test-room-1/TestRoom1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/maps/finished/FinishedMap.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/maps/tests/test-room-2/TestRoom2.tscn" type="PackedScene" id=13]
 
 [node name="VertigoMazeGame" type="Spatial"]
 script = ExtResource( 1 )
@@ -39,8 +40,11 @@ map_scene = ExtResource( 9 )
 [node name="LearnCarrying" parent="Levels" instance=ExtResource( 2 )]
 map_scene = ExtResource( 10 )
 
-[node name="TestMedium" parent="Levels" instance=ExtResource( 2 )]
+[node name="TestRoom1" parent="Levels" instance=ExtResource( 2 )]
 map_scene = ExtResource( 11 )
+
+[node name="TestRoom2" parent="Levels" instance=ExtResource( 2 )]
+map_scene = ExtResource( 13 )
 
 [node name="Finished" parent="Levels" instance=ExtResource( 2 )]
 map_scene = ExtResource( 12 )
