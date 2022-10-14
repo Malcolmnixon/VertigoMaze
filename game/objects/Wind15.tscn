@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://addons/godot-xr-tools/objects/Wind_area.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-xr-tools/objects/wind_area.gd" type="Script" id=1]
 [ext_resource path="res://addons/kenney_particle_pack/dirt_02.png" type="Texture" id=2]
 [ext_resource path="res://game/objects/Wind15.gd" type="Script" id=3]
 

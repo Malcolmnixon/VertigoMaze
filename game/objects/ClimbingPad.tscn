@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/godot-xr-tools/objects/Object_climbable.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-xr-tools/objects/climbable.gd" type="Script" id=1]
 [ext_resource path="res://game/materials/ClimbingPad.tres" type="Material" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
