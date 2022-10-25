@@ -19,7 +19,7 @@ margin_top = 136.0
 margin_right = 1024.0
 margin_bottom = 450.0
 theme = ExtResource( 2 )
-text = "Version: 0.0.4
+text = "Version: 0.0.5
 By: Malcolm Nixon
 Code: github.com/Malcolmnixon/VertigoMaze
 Engine: godotengine.org
