@@ -38,7 +38,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, -1.7 )
 visible = false
 screen_size = Vector2( 2.048, 1.2 )
 viewport_size = Vector2( 1024, 600 )
+unshaded = true
 scene = ExtResource( 2 )
+update_mode = 2
+throttle_fps = 5.0
 
 [node name="Sounds" type="Node" parent="."]
 
