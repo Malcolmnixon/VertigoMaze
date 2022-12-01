@@ -144,12 +144,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/overrides/ground_physics_settings.gd"
 }, {
-"base": "Reference",
+"base": "Spatial",
 "class": "XRToolsHand",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/hands/hand.gd"
 }, {
-"base": "Reference",
+"base": "BoneAttachment",
 "class": "XRToolsHandPhysicsBone",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/hands/hand_physics_bone.gd"
@@ -289,7 +289,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_wind.gd"
 }, {
-"base": "Reference",
+"base": "XRToolsHand",
 "class": "XRToolsPhysicsHand",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/hands/physics_hand.gd"
@@ -299,7 +299,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/objects/pickable.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "XRToolsPlayerBody",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/player/player_body.gd"
@@ -377,7 +377,7 @@ _global_script_class_icons={
 "XRToolsGrabPointSnap": "",
 "XRToolsGroundPhysics": "",
 "XRToolsGroundPhysicsSettings": "",
-"XRToolsHand": "",
+"XRToolsHand": "res://addons/godot-xr-tools/editor/icons/hand.svg",
 "XRToolsHandPhysicsBone": "",
 "XRToolsHandPoseArea": "res://addons/godot-xr-tools/editor/icons/hand.svg",
 "XRToolsHandPoseSettings": "res://addons/godot-xr-tools/editor/icons/hand.svg",
@@ -408,7 +408,7 @@ _global_script_class_icons={
 "XRToolsMovementWind": "",
 "XRToolsPhysicsHand": "",
 "XRToolsPickable": "",
-"XRToolsPlayerBody": "",
+"XRToolsPlayerBody": "res://addons/godot-xr-tools/editor/icons/body.svg",
 "XRToolsPoke": "",
 "XRToolsSceneBase": "",
 "XRToolsSnapZone": "",
@@ -423,7 +423,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VertigoMaze"
-config/description="Vertigo Maze 0.0.6"
+config/description="Vertigo Maze 0.0.7"
 run/main_scene="res://game/VertigoMazeGame.tscn"
 config/icon="res://icon.png"
 
@@ -438,6 +438,10 @@ enabled=PoolStringArray( "res://addons/godot-openxr/plugin.cfg", "res://addons/g
 [gdnative]
 
 singletons=[ "res://addons/godot-openxr/config/godot_openxr.gdnlib" ]
+
+[godot_xr_tools]
+
+input/default_snap_turning=false
 
 [gui]
 

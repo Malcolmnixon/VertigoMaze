@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/godot-xr-tools/hands/materials/ghost_hand.tres" type="Material" id=2]
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_grapple.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_climb.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_physical_jump.tscn" type="PackedScene" id=5]
@@ -46,10 +47,11 @@ material/0 = SubResource( 2 )
 [node name="Tween" type="Tween" parent="FPController/ARVRCamera" index="1"]
 
 [node name="LeftHand" parent="FPController/LeftHandController" index="0" instance=ExtResource( 15 )]
+hand_material_override = ExtResource( 2 )
 
 [node name="Function_Pickup" parent="FPController/LeftHandController" index="1" instance=ExtResource( 7 )]
-ranged_distance = 2.0
-ranged_angle = 15.0
+ranged_distance = 3.0
+ranged_angle = 20.0
 
 [node name="Function_Direct_movement" parent="FPController/LeftHandController" index="2" instance=ExtResource( 11 )]
 enabled = false
@@ -62,14 +64,15 @@ enabled = false
 jump_button_id = 7
 
 [node name="RightHand" parent="FPController/RightHandController" index="0" instance=ExtResource( 14 )]
+hand_material_override = ExtResource( 2 )
 
 [node name="Function_pointer" parent="FPController/RightHandController" index="1" instance=ExtResource( 10 )]
 enabled = false
 laser_length = 1
 
 [node name="Function_Pickup" parent="FPController/RightHandController" index="2" instance=ExtResource( 7 )]
-ranged_distance = 2.0
-ranged_angle = 15.0
+ranged_distance = 3.0
+ranged_angle = 20.0
 
 [node name="Function_Turn_movement" parent="FPController/RightHandController" index="3" instance=ExtResource( 6 )]
 
