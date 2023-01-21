@@ -26,6 +26,7 @@ points = PoolVector3Array( 0, 0, -0.984808, -0.376918, 0, -0.910002, 0, 0.173551
 [node name="JumpPad" type="Spatial"]
 
 [node name="Base" type="StaticBody" parent="."]
+collision_mask = 0
 
 [node name="Base" type="MeshInstance" parent="Base"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0 )

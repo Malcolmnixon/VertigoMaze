@@ -14,42 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/misc/arvr_helpers.gd"
 }, {
-"base": "MapBase",
-"class": "FinishedMap",
-"language": "GDScript",
-"path": "res://game/maps/finished/FinishedMap.gd"
-}, {
-"base": "MapBase",
-"class": "LearnCarryingMap",
-"language": "GDScript",
-"path": "res://game/maps/learn/learn_carry/LearnCarryingMap.gd"
-}, {
-"base": "MapBase",
-"class": "LearnClimbingMap",
-"language": "GDScript",
-"path": "res://game/maps/learn/learn_climbing/LearnClimbingMap.gd"
-}, {
-"base": "MapBase",
-"class": "LearnGlidingMap",
-"language": "GDScript",
-"path": "res://game/maps/learn/learn_gliding/LearnGlidingMap.gd"
-}, {
-"base": "MapBase",
-"class": "LearnGrapplingMap",
-"language": "GDScript",
-"path": "res://game/maps/learn/learn_grappling/LearnGrapplingMap.gd"
-}, {
-"base": "MapBase",
-"class": "LearnJumpPadMap",
-"language": "GDScript",
-"path": "res://game/maps/learn/learn_jump/LearnJumpPadMap.gd"
-}, {
-"base": "MapBase",
-"class": "LearnWindMap",
-"language": "GDScript",
-"path": "res://game/maps/learn/learn_wind/LearnWindMap.gd"
-}, {
-"base": "Spatial",
+"base": "XRToolsSceneBase",
 "class": "MapBase",
 "language": "GDScript",
 "path": "res://game/maps/MapBase.gd"
@@ -60,29 +25,9 @@ _global_script_classes=[ {
 "path": "res://game/MapLevel.gd"
 }, {
 "base": "Spatial",
-"class": "Player",
-"language": "GDScript",
-"path": "res://game/player/Player.gd"
-}, {
-"base": "Spatial",
 "class": "Target",
 "language": "GDScript",
 "path": "res://game/targets/Target.gd"
-}, {
-"base": "MapBase",
-"class": "TestRoom1",
-"language": "GDScript",
-"path": "res://game/maps/tests/test-room-1/TestRoom1.gd"
-}, {
-"base": "MapBase",
-"class": "TestRoom2",
-"language": "GDScript",
-"path": "res://game/maps/tests/test-room-2/TestRoom2.gd"
-}, {
-"base": "MapBase",
-"class": "WelcomeMap",
-"language": "GDScript",
-"path": "res://game/maps/welcome/WelcomeMap.gd"
 }, {
 "base": "Node",
 "class": "XRTools",
@@ -285,6 +230,11 @@ _global_script_classes=[ {
 "path": "res://addons/godot-xr-tools/functions/movement_turn.gd"
 }, {
 "base": "XRToolsMovementProvider",
+"class": "XRToolsMovementWallWalk",
+"language": "GDScript",
+"path": "res://addons/godot-xr-tools/functions/movement_wall_walk.gd"
+}, {
+"base": "XRToolsMovementProvider",
 "class": "XRToolsMovementWind",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_wind.gd"
@@ -309,6 +259,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/player/poke/poke.gd"
 }, {
+"base": "Node",
+"class": "XRToolsResourceQueue",
+"language": "GDScript",
+"path": "res://addons/godot-xr-tools/assets/resource_queue/resource_queue.gd"
+}, {
 "base": "Spatial",
 "class": "XRToolsSceneBase",
 "language": "GDScript",
@@ -323,6 +278,11 @@ _global_script_classes=[ {
 "class": "XRToolsStaging",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/staging/staging.gd"
+}, {
+"base": "Node",
+"class": "XRToolsStartXR",
+"language": "GDScript",
+"path": "res://addons/godot-xr-tools/xr/start_xr.gd"
 }, {
 "base": "Reference",
 "class": "XRToolsVelocityAverager",
@@ -351,20 +311,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "ARVRHelpers": "",
-"FinishedMap": "",
-"LearnCarryingMap": "",
-"LearnClimbingMap": "",
-"LearnGlidingMap": "",
-"LearnGrapplingMap": "",
-"LearnJumpPadMap": "",
-"LearnWindMap": "",
 "MapBase": "",
 "MapLevel": "",
-"Player": "",
 "Target": "",
-"TestRoom1": "",
-"TestRoom2": "",
-"WelcomeMap": "",
 "XRTools": "",
 "XRToolsClimbable": "res://addons/godot-xr-tools/editor/icons/hand.svg",
 "XRToolsFallDamage": "",
@@ -405,14 +354,17 @@ _global_script_class_icons={
 "XRToolsMovementProvider": "res://addons/godot-xr-tools/editor/icons/movement_provider.svg",
 "XRToolsMovementSprint": "",
 "XRToolsMovementTurn": "",
+"XRToolsMovementWallWalk": "",
 "XRToolsMovementWind": "",
 "XRToolsPhysicsHand": "",
 "XRToolsPickable": "",
 "XRToolsPlayerBody": "res://addons/godot-xr-tools/editor/icons/body.svg",
 "XRToolsPoke": "",
+"XRToolsResourceQueue": "",
 "XRToolsSceneBase": "",
 "XRToolsSnapZone": "",
 "XRToolsStaging": "",
+"XRToolsStartXR": "",
 "XRToolsVelocityAverager": "",
 "XRToolsVelocityAveragerLinear": "",
 "XRToolsVignette": "",
@@ -446,6 +398,15 @@ input/default_snap_turning=false
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[layer_names]
+
+3d_physics/layer_1="static world"
+3d_physics/layer_2="climbable objects"
+3d_physics/layer_3="dynamic objects"
+3d_physics/layer_4="grapplable objects"
+3d_physics/layer_17="held object"
+3d_physics/layer_20="player body"
 
 [physics]
 

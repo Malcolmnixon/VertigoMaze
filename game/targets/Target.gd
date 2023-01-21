@@ -36,5 +36,7 @@ func _on_Area_body_entered(_body):
 	enabled = false
 	_update_enabled()
 
+
+func _on_Triggered_finished():
 	# Emit triggered signal
 	emit_signal("target_triggered", self)

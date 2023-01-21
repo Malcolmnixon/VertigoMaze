@@ -5,35 +5,41 @@
 [ext_resource path="res://assets/readloud.net/Finished.mp3" type="AudioStream" id=3]
 [ext_resource path="res://game/objects/FloorRise.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/maps/MapBase.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/rooms/SmallRoom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/maps/finished/FinishedMap.lmbake" type="BakedLightmapData" id=8]
 
-[node name="FinishedMap" type="Spatial"]
+[node name="FinishedMap" instance=ExtResource( 6 )]
 script = ExtResource( 1 )
+next_map = "res://game/maps/welcome/WelcomeMap.tscn"
 
-[node name="Environment" type="Spatial" parent="."]
+[node name="ARVROrigin" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 
-[node name="SmallRoom" parent="Environment" instance=ExtResource( 7 )]
+[node name="Finished" type="AudioStreamPlayer" parent="Sounds" index="3"]
+stream = ExtResource( 3 )
+autoplay = true
 
-[node name="FloorRise" parent="Environment" instance=ExtResource( 4 )]
+[node name="Environment" type="Spatial" parent="." index="2"]
 
-[node name="OmniLight" type="OmniLight" parent="Environment"]
+[node name="SmallRoom" parent="Environment" index="0" instance=ExtResource( 7 )]
+
+[node name="FloorRise" parent="Environment" index="1" instance=ExtResource( 4 )]
+
+[node name="OmniLight" type="OmniLight" parent="Environment" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0 )
+light_indirect_energy = 0.2
 light_size = 1.0
 light_bake_mode = 2
 shadow_enabled = true
-omni_range = 17.0
+omni_range = 25.0
 
-[node name="BakedLightmap" type="BakedLightmap" parent="Environment"]
+[node name="BakedLightmap" type="BakedLightmap" parent="Environment" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
 extents = Vector3( 11, 11, 11 )
 light_data = ExtResource( 8 )
 
-[node name="Player" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
-
-[node name="CreditsScreen" parent="." instance=ExtResource( 5 )]
+[node name="CreditsScreen" parent="." index="3" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, -1.7 )
 visible = false
 screen_size = Vector2( 2.048, 1.2 )
@@ -43,10 +49,4 @@ scene = ExtResource( 2 )
 update_mode = 2
 throttle_fps = 5.0
 
-[node name="Sounds" type="Node" parent="."]
-
-[node name="Finished" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 3 )
-
-[connection signal="fade_complete" from="Player" to="." method="_on_Player_fade_complete"]
 [connection signal="finished" from="Sounds/Finished" to="." method="_on_Finished_finished"]

@@ -28,6 +28,8 @@ shape = SubResource( 3 )
 
 [node name="Snap_Zone" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.2 )
+collision_layer = 4
+collision_mask = 65540
 snap_require = "red_key"
 
 [node name="XRTHighlightRing" parent="Snap_Zone" instance=ExtResource( 3 )]

@@ -21,6 +21,7 @@ surfaces/0 = {
 extents = Vector3( 2.5, 0.5, 2.5 )
 
 [node name="Platform" type="StaticBody"]
+collision_mask = 0
 
 [node name="Platform" type="MeshInstance" parent="."]
 use_in_baked_light = true

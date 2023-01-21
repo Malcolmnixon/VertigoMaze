@@ -7,83 +7,83 @@
 [ext_resource path="res://game/rooms/SmallRoom.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/objects/RedKey.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/targets/Target.tscn" type="PackedScene" id=7]
-[ext_resource path="res://game/player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/maps/MapBase.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/objects/Column5.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/objects/Block.tscn" type="PackedScene" id=10]
 [ext_resource path="res://game/objects/RedPanel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/objects/Ramp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://game/maps/learn/learn_carry/LearnCarryingMap.gd" type="Script" id=13]
 
-[node name="LearnCarryingMap" type="Spatial"]
+[node name="LearnCarryingMap" instance=ExtResource( 8 )]
 script = ExtResource( 13 )
+next_map = "res://game/maps/tests/test-room-1/TestRoom1.tscn"
 
-[node name="Environment" type="Spatial" parent="."]
+[node name="ARVROrigin" parent="." index="0"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 4, 8 )
 
-[node name="SmallRoom" parent="Environment" instance=ExtResource( 5 )]
+[node name="LearnCarrying" type="AudioStreamPlayer" parent="Sounds" index="3"]
+stream = ExtResource( 1 )
+autoplay = true
 
-[node name="GrappleTarget" parent="Environment" instance=ExtResource( 4 )]
+[node name="TrainingComplete" type="AudioStreamPlayer" parent="Sounds" index="4"]
+stream = ExtResource( 2 )
+
+[node name="Environment" type="Spatial" parent="." index="2"]
+
+[node name="SmallRoom" parent="Environment" index="0" instance=ExtResource( 5 )]
+
+[node name="GrappleTarget" parent="Environment" index="1" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -8 )
 
-[node name="Column5" parent="Environment" instance=ExtResource( 9 )]
+[node name="Column5" parent="Environment" index="2" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -9 )
 
-[node name="Block1" parent="Environment" instance=ExtResource( 10 )]
+[node name="Block1" parent="Environment" index="3" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 7.5 )
 
-[node name="Block2" parent="Environment" instance=ExtResource( 10 )]
+[node name="Block2" parent="Environment" index="4" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5 )
 
-[node name="Block3" parent="Environment" instance=ExtResource( 10 )]
+[node name="Block3" parent="Environment" index="5" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5 )
 
-[node name="Block4" parent="Environment" instance=ExtResource( 10 )]
+[node name="Block4" parent="Environment" index="6" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5 )
 
-[node name="Block5" parent="Environment" instance=ExtResource( 10 )]
+[node name="Block5" parent="Environment" index="7" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5 )
 
-[node name="Block7" parent="Environment" instance=ExtResource( 10 )]
+[node name="Block7" parent="Environment" index="8" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -2, -7.5 )
 
-[node name="Ramp" parent="Environment" instance=ExtResource( 12 )]
+[node name="Ramp" parent="Environment" index="9" instance=ExtResource( 12 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.5, 0, 1 )
 
-[node name="OmniLight" type="OmniLight" parent="Environment"]
+[node name="OmniLight" type="OmniLight" parent="Environment" index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0 )
+light_indirect_energy = 0.2
 light_size = 1.0
 light_bake_mode = 2
 shadow_enabled = true
-omni_range = 17.0
+omni_range = 25.0
 
-[node name="BakedLightmap" type="BakedLightmap" parent="Environment"]
+[node name="BakedLightmap" type="BakedLightmap" parent="Environment" index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
 extents = Vector3( 11, 11, 11 )
 light_data = ExtResource( 3 )
 
-[node name="RedKey" parent="." instance=ExtResource( 6 )]
+[node name="RedKey" parent="." index="3" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5.1, 8 )
 
-[node name="RedPanel" parent="." instance=ExtResource( 11 )]
+[node name="RedPanel" parent="." index="4" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3, -10 )
 
-[node name="Target" parent="." instance=ExtResource( 7 )]
+[node name="Target" parent="." index="5" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 5, -9 )
 enabled = false
 
-[node name="Player" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 8 )
-
-[node name="Sounds" type="Node" parent="."]
-
-[node name="LearnCarrying" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 1 )
-
-[node name="TrainingComplete" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 2 )
-
+[connection signal="finished" from="Sounds/LearnCarrying" to="." method="_on_LearnCarrying_finished"]
+[connection signal="finished" from="Sounds/TrainingComplete" to="." method="_on_TrainingComplete_finished"]
 [connection signal="key_inserted" from="RedPanel" to="." method="_on_RedPanel_key_inserted"]
 [connection signal="key_removed" from="RedPanel" to="." method="_on_RedPanel_key_removed"]
 [connection signal="target_triggered" from="Target" to="." method="_on_Target_target_triggered"]
-[connection signal="fade_complete" from="Player" to="." method="_on_Player_fade_complete"]
-[connection signal="finished" from="Sounds/LearnCarrying" to="." method="_on_LearnCarrying_finished"]
-[connection signal="finished" from="Sounds/TrainingComplete" to="." method="_on_TrainingComplete_finished"]
