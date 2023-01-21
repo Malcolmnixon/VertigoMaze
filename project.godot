@@ -375,7 +375,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VertigoMaze"
-config/description="Vertigo Maze 0.0.7"
+config/description="Vertigo Maze 0.0.8"
 run/main_scene="res://game/VertigoMazeGame.tscn"
 config/icon="res://icon.png"
 
